@@ -1,0 +1,184 @@
+import React, { useState } from 'react';
+import { ShoppingCart, Cpu, ShieldCheck, Sparkles, Send, CheckCircle2 } from 'lucide-react';
+
+export default function MizaniApp() {
+  const [selectedPart, setSelectedPart] = useState(null);
+  const [quantity, setQuantity] = useState(1);
+  const [aiAnswers, setAiAnswers] = useState({});
+  const [aiRecommendation, setAiRecommendation] = useState('');
+  const [orderSent, setOrderSent] = useState(false);
+
+  // Data ya Sehemu za Mzani (Interactive Breakdown)
+  const scaleParts = {
+    display: {
+      name: "Kichwa & Digital Display (LED)",
+      desc: "Inatumia screen ya LED yenye mwanga mkali wa bluu/kijani kuonekana hata kwenye jua kali. Ndani kuna microchip ya kisasa inayokata uzito kwa usahihi wa gramu 0.1.",
+      material: "Kioo kigumu cha kuzuia mikwaruzo na plastiki ya kuzuia joto (ABS Plastic)."
+    },
+    body: {
+      name: "Mwili & Metal Plate (Platform)",
+      desc: "Imetengenezwa kwa chuma kizito (Heavy-duty Stainless Steel) inayoweza kuhimili mizigo mikubwa bila kupinda wala kutu.",
+      material: "Chuma cha pua (Stainless Steel) na mabati maalum ya kuzuia kutu."
+    },
+    sensor: {
+      name: "Load Cell (Sensor ya Uzito)",
+      desc: "Hii ndiyo moyo wa mzani. Inapokea mzigo na kutuma signal ya namba kwenye display papo hapo bila kuchelewa.",
+      material: "Alloy Steel yenye uwezo wa kuhimili mpaka kilo 150+."
+    }
+  };
+
+  // AI Assistant Logic ya Kupendekeza Mzani
+  const handleAiChoice = (type) => {
+    setAiAnswers(type);
+    if (type === 'duka') {
+      setAiRecommendation("Mzani mzuri kwako ni **Mzani wa Digital wa Kilo 40 hadi 50** wa kaunta. Ni mwepesi, una betri ya kudumu siku kadhaa, na unatosha kwa biashara ya nafaka au maduka madogo.");
+    } else if (type === 'kiwanda') {
+      setAiRecommendation("Tunakushauri uchukue **Mzani wa Platform wa Kilo 150 hadi 300** wenye chuma kigumu na nguzo. Unamudu mizigo mizito ya magunia na bidhaa za jumla.");
+    } else {
+      setAiRecommendation("Kwa matumizi ya nyumbani au kupimia afya, **Mzani wa Mwili (Bathroom Scale)** wenye uwezo wa kilo 180 na vioo vigumu ndio chaguo sahihi.");
+    }
+  };
+
+  // Kutuma Oda Moja kwa Moja WhatsApp
+  const sendWhatsAppOrder = () => {
+    const phoneNumber = "2557XXXXXXXX"; // Weka namba yako hapa (mfano: 2556xxxxxxxx)
+    const message = `Habari Mizani Tanzania! Nataka kuagiza bidhaa. Idadi (Pieces): ${quantity}. Tafadhali nipe maelekezo zaidi.`;
+    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    window.open(url, '_blank');
+    setOrderSent(true);
+  };
+
+  return (
+    <div className="min-h-screen bg-slate-950 text-slate-100 font-sans p-4 pb-20 selection:bg-cyan-500 selection:text-white">
+      
+      {/* HEADER */}
+      <header className="flex justify-between items-center py-4 border-b border-slate-800 mb-6">
+        <h1 className="text-xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+          Mizani Tanzania ⚖️
+        </h1>
+        <span className="text-xs bg-cyan-950 border border-cyan-700 text-cyan-300 px-3 py-1 rounded-full">
+          Store & Tech 🚀
+        </span>
+      </header>
+
+      {/* AI SMART ASSISTANT SECTION ("Kamdol ka AI") */}
+      <section className="bg-gradient-to-br from-slate-900 to-slate-900/80 border border-slate-800 rounded-2xl p-5 mb-6 shadow-xl relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-500/10 rounded-full blur-2xl pointer-events-none"></div>
+        <div className="flex items-center gap-2 mb-3">
+          <Sparkles className="text-cyan-400 w-5 h-5 animate-pulse" />
+          <h2 className="font-bold text-sm tracking-wide text-cyan-200">Msaidizi wa Duka (AI Assistant)</h2>
+        </div>
+        <p className="text-xs text-slate-400 mb-4">Unatafuta mzani wa aina gani leo? Chagua hapa chini nikushauri moja kwa moja:</p>
+        
+        <div className="grid grid-cols-3 gap-2 mb-4">
+          <button onClick={() => handleAiChoice('duka')} className="bg-slate-800 hover:bg-cyan-600/30 border border-slate-700 text-xs py-2 px-1 rounded-xl transition font-medium text-center">
+            🏪 Duka / Biashara
+          </button>
+          <button onClick={() => handleAiChoice('kiwanda')} className="bg-slate-800 hover:bg-cyan-600/30 border border-slate-700 text-xs py-2 px-1 rounded-xl transition font-medium text-center">
+            🏭 Kiwanda / Jumla
+          </button>
+          <button onClick={() => handleAiChoice('nyumbani')} className="bg-slate-800 hover:bg-cyan-600/30 border border-slate-700 text-xs py-2 px-1 rounded-xl transition font-medium text-center">
+            🏠 Nyumbani / Afya
+          </button>
+        </div>
+
+        {aiRecommendation && (
+          <div className="bg-cyan-950/40 border border-cyan-800/60 p-3 rounded-xl text-xs text-cyan-100 animate-fadeIn">
+            🤖 <span dangerouslySetInnerHTML={{ __html: aiRecommendation }} />
+          </div>
+        )}
+      </section>
+
+      {/* INTERACTIVE 3D/ANIMATED PRODUCT BREAKDOWN SECTION */}
+      <section className="mb-6">
+        <div className="flex items-center justify-between mb-3">
+          <h3 className="font-bold text-sm text-slate-200">Gundua Ndani ya Mzani (Interactive X-Ray)</h3>
+          <span className="text-[10px] text-slate-400">Gusa sehemu husika👇</span>
+        </div>
+
+        {/* Product Visual Mock */}
+        <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 text-center relative flex flex-col items-center justify-center min-h-[180px]">
+          
+          {/* Sehemu ya Kichwa/Display */}
+          <button 
+            onClick={() => setSelectedPart('display')}
+            className="bg-cyan-500/20 border border-cyan-500/50 hover:bg-cyan-500/30 px-6 py-2 rounded-xl text-xs font-bold text-cyan-300 mb-3 transition shadow-md w-3/4"
+          >
+            📺 Gusa Kichwa & Display
+          </button>
+
+          {/* Sehemu ya Body/Metal Plate */}
+          <button 
+            onClick={() => setSelectedPart('body')}
+            className="bg-blue-600/20 border border-blue-500/50 hover:bg-blue-600/30 px-8 py-3 rounded-xl text-xs font-bold text-blue-300 mb-3 transition shadow-md w-11/12"
+          >
+            ⚖️ Gusa Mwili wa Mzani (Platform)
+          </button>
+
+          {/* Sehemu ya Load Cell ndani */}
+          <button 
+            onClick={() => setSelectedPart('sensor')}
+            className="bg-emerald-600/20 border border-emerald-500/50 hover:bg-emerald-600/30 px-4 py-1.5 rounded-lg text-[10px] font-semibold text-emerald-300 transition"
+          >
+            ⚙️ Tazama Load Cell (Sensor ya Ndani)
+          </button>
+        </div>
+
+        {/* Maelezo Yanayofunguka (Popup Card) */}
+        {selectedPart && (
+          <div className="mt-3 bg-slate-900 border border-cyan-700/60 p-4 rounded-2xl text-xs animate-fadeIn relative">
+            <button onClick={() => setSelectedPart(null)} className="absolute top-2 right-3 text-slate-400 hover:text-white font-bold">✕</button>
+            <h4 className="font-bold text-cyan-400 mb-1 flex items-center gap-1">
+              <Cpu className="w-3.5 h-3.5" /> {scaleParts[selectedPart].name}
+            </h4>
+            <p className="text-slate-300 mb-2 leading-relaxed">{scaleParts[selectedPart].desc}</p>
+            <p className="text-[11px] text-slate-400 bg-slate-950 p-2 rounded-lg border border-slate-800">
+              <strong className="text-slate-200">Material:</strong> {scaleParts[selectedPart].material}
+            </p>
+          </div>
+        )}
+      </section>
+
+      {/* DIRECT ORDER SYSTEM (WhatsApp Pieces & Order) */}
+      <section className="bg-slate-900 border border-slate-800 rounded-2xl p-5 shadow-xl">
+        <h3 className="font-bold text-sm text-slate-200 mb-3 flex items-center gap-1.5">
+          <ShoppingCart className="w-4 h-4 text-cyan-400" /> Weka Oda Moja kwa Moja
+        </h3>
+        
+        <div className="flex items-center justify-between bg-slate-950 border border-slate-800 p-3 rounded-xl mb-4">
+          <span className="text-xs text-slate-300">Chagua Idadi (Pieces):</span>
+          <div className="flex items-center gap-3">
+            <button 
+              onClick={() => setQuantity(Math.max(1, quantity - 1))}
+              className="w-7 h-7 bg-slate-800 rounded-lg flex items-center justify-center font-bold hover:bg-slate-700"
+            >-</button>
+            <span className="font-bold text-sm text-cyan-400">{quantity}</span>
+            <button 
+              onClick={() => setQuantity(quantity + 1)}
+              className="w-7 h-7 bg-slate-800 rounded-lg flex items-center justify-center font-bold hover:bg-slate-700"
+            >+</button>
+          </div>
+        </div>
+
+        <button 
+          onClick={sendWhatsAppOrder}
+          className="w-full bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-bold py-3 px-4 rounded-xl text-xs flex items-center justify-center gap-2 shadow-lg transition active:scale-95"
+        >
+          <Send className="w-4 h-4" /> Tuma Oda WhatsApp ({quantity} Pcs)
+        </button>
+
+        {orderSent && (
+          <p className="text-center text-[11px] text-emerald-400 mt-2 flex items-center justify-center gap-1">
+            <CheckCircle2 className="w-3.5 h-3.5" /> Oda yako imeandaliwa kwenda WhatsApp!
+          </p>
+        )}
+      </section>
+
+      {/* FOOTER */}
+      <footer className="text-center text-[10px] text-slate-500 mt-8">
+        © 2026 Mizani Tanzania • Designed for Android & iPhone 📱✨
+      </footer>
+
+    </div>
+  );
+}
