@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mizani Tanzania - Digital Scales Store</title>
+    <!-- Tailwind CSS with CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        slate: { 950: '#020617', 900: '#0f172a', 800: '#1e293b', 700: '#334155', 400: '#94a3b8', 100: '#f1f5f9' },
+                        cyan: { 500: '#06b6d4', 400: '#22d3ee', 300: '#67e8f9', 200: '#a5f3fc', 100: '#cffafe' },
+                        emerald: { 600: '#059669', 500: '#10b981', 400: '#34d399' }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Custom CSS for Glassmorphism & Animations -->
+    <style>
+        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(8px); border: 1px solid rgba(255, 255, 255, 0.05); }
+        .part-details { transition: opacity 0.3s ease, transform 0.3s ease; opacity: 0; transform: translateY(-10px); display: none; }
+        .part-details.active { opacity: 1; transform: translateY(0); display: block; }
+        .ai-fade { transition: opacity 0.3s ease; opacity: 0; display: none; }
+        .ai-fade.active { opacity: 1; display: block; }
+    </style>
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-100 font-sans p-4 pb-20 selection:bg-cyan-500 selection:text-white mobile-first">
+
+    <!-- HEADER -->
+    <header class="flex justify-between items-center py-4 border-b border-slate-800 mb-6">
+        <div class="flex items-center gap-3">
+            <img src="logo.png" alt="Mizani Tanzania Logo" class="w-10 h-10 rounded-xl" />
+            <h1 class="text-xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                Mizani Tanzania ⚖️
+            </h1>
+        </div>
+        <span class="text-xs glass text-cyan-300 px-3 py-1 rounded-full border-cyan-800">
+            Tech Store 🚀
+        </span>
+    </header>
+
+    <!-- AI SMART ASSISTANT SECTION -->
+    <section class="glass rounded-2xl p-5 mb-6 shadow-xl relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-32 h-32 bg-cyan-500/10 rounded-full blur-2xl pointer-events-none"></div>
+        <div class="flex items-center gap-2 mb-3">
+            <svg class="text-cyan-400 w-5 h-5 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L5.605 15.603a2 2 0 01-1.112-1.112l-.477-2.387a6 6 0 00-.517-3.86l-.158-.318a6 6 0 01-.517-3.86L3.603 5.605a2 2 0 011.112-1.112l2.387-.477a6 6 0 003.86-.517l.318-.158a6 6 0 013.86-.517l2.387.477a2 2 0 011.112 1.112l.477 2.387a6 6 0 00.517 3.86l.158.318a6 6 0 01.517 3.86l.477 2.387a2 2 0 01-1.112 1.112l-2.387.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L5.605 15.603a2 2 0 01-1.112-1.112l-.477-2.387a6 6 0 00-.517-3.86l-.158-.318a6 6 0 01-.517-3.86L3.603 5.605a2 2 0 011.112-1.112l2.387-.477a6 6 0 003.86-.517l.318-.158a6 6 0 013.86-.517l2.387.477a2 2 0 011.112 1.112l.477 2.387a6 6 0 00.517 3.86l.158.318a6 6 0 01.517 3.86l.477 2.387a2 2 0 01-1.112 1.112l-2.387.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L5.605 15.603a2 2 0 01-1.112-1.112l-.477-2.387a6 6 0 00-.517-3.86l-.158-.318a6 6 0 01-.517-3.86L3.603 5.605a2 2 0 011.112-1.112l2.387-.477a6 6 0 003.86-.517l.318-.158a6 6 0 013.86-.517l2.387.477a2 2 0 011.112 1.112l.477 2.387a6 6 0 00.517 3.86l.158.318a6 6 0 01.517 3.86l.477 2.387a2 2 0 01-1.112 1.112l-2.387.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L5.605 15.603a2 2 0 01-1.112-1.112l-.477-2.387a6 6 0 00-.517-3.86l-.158-.318a6 6 0 01-.517-3.86L3.603 5.605A2 2 0 014.715 4.5h.001M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 18c-4.418 0-8-3.582-8-8s3.582-8 8-8 8 3.582 8 8-3.582 8-8 8z"></path></svg>
+            <h2 class="font-bold text-sm tracking-wide text-cyan-200">Msaidizi wa Duka (AI)</h2>
+        </div>
+        <p class="text-xs text-slate-400 mb-4">Unatafuta mzani wa aina gani? Chagua nikupe ushauri:</p>
+        
+        <div class="grid grid-cols-3 gap-2 mb-4">
+            <button onclick="aiRecommend('duka')" class="bg-slate-800 hover:bg-cyan-600/30 border border-slate-700 text-xs py-2 px-1 rounded-xl transition font-medium text-center">
+                🏪 Duka / Biashara
+            </button>
+            <button onclick="aiRecommend('kiwanda')" class="bg-slate-800 hover:bg-cyan-600/30 border border-slate-700 text-xs py-2 px-1 rounded-xl transition font-medium text-center">
+                🏭 Kiwanda / Jumla
+            </button>
+            <button onclick="aiRecommend('nyumbani')" class="bg-slate-800 hover:bg-cyan-600/30 border border-slate-700 text-xs py-2 px-1 rounded-xl transition font-medium text-center">
+                🏠 Nyumbani / Afya
+            </button>
+        </div>
+
+        <div id="aiRecommendation" class="ai-fade bg-cyan-950/40 border border-cyan-800/60 p-3 rounded-xl text-xs text-cyan-100">
+            🤖 <span id="aiRecText"></span>
+        </div>
+    </section>
+
+    <!-- INTERACTIVE 3D/ANIMATED PRODUCT BREAKDOWN SECTION -->
+    <section class="mb-6">
+        <div class="flex items-center justify-between mb-3">
+            <h3 class="font-bold text-sm text-slate-200">Gundua Ndani ya Mzani (150kg Digital)</h3>
+            <span class="text-[10px] text-slate-400">Gusa sehemu husika👇</span>
+        </div>
+
+        <!-- Product Visual Mock -->
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 text-center relative flex flex-col items-center justify-center min-h-[180px]">
+            <!-- Sehemu ya Kichwa/Display -->
+            <button onclick="showPart('display')" class="bg-cyan-500/20 border border-cyan-500/50 hover:bg-cyan-500/30 px-6 py-2 rounded-xl text-xs font-bold text-cyan-300 mb-3 transition shadow-md w-3/4">
+                📺 Kichwa & Display
+            </button>
+            <!-- Sehemu ya Body/Metal Plate -->
+            <button onclick="showPart('body')" class="bg-blue-600/20 border border-blue-500/50 hover:bg-blue-600/30 px-8 py-3 rounded-xl text-xs font-bold text-blue-300 mb-3 transition shadow-md w-11/12">
+                ⚖️ Mwili (Metal Platform)
+            </button>
+            <!-- Sehemu ya Load Cell ndani -->
+            <button onclick="showPart('sensor')" class="bg-emerald-600/20 border border-emerald-500/50 hover:bg-emerald-600/30 px-4 py-1.5 rounded-lg text-[10px] font-semibold text-emerald-300 transition">
+                ⚙️ Load Cell (Sensor ya Ndani)
+            </button>
+        </div>
+
+        <!-- Maelezo Yanayofunguka (Popup Cards) -->
+        <div id="partDetails" class="mt-3 part-details bg-slate-900 glass p-4 rounded-2xl text-xs relative">
+            <button onclick="closePart()" class="absolute top-2 right-3 text-slate-400 hover:text-white font-bold">✕</button>
+            <h4 id="partTitle" class="font-bold text-cyan-400 mb-1 flex items-center gap-1"></h4>
+            <p id="partDesc" class="text-slate-300 mb-2 leading-relaxed"></p>
+            <p class="text-[11px] text-slate-400 bg-slate-950/60 glass p-2 rounded-lg">
+                <strong class="text-slate-200">Material:</strong> <span id="partMaterial"></span>
+            </p>
+        </div>
+    </section>
+
+    <!-- DIRECT ORDER SYSTEM -->
+    <section class="bg-slate-900 glass rounded-2xl p-5 shadow-xl border border-slate-800">
+        <h3 class="font-bold text-sm text-slate-200 mb-3 flex items-center gap-1.5">
+            <svg class="w-4 h-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+            Weka Oda Moja kwa Moja
+        </h3>
+        
+        <div class="flex items-center justify-between glass p-3 rounded-xl mb-4 border border-slate-800/50">
+            <span class="text-xs text-slate-300">Chagua Idadi (Pieces):</span>
+            <div class="flex items-center gap-3">
+                <button onclick="updateQuantity(-1)" class="w-7 h-7 bg-slate-800 rounded-lg flex items-center justify-center font-bold hover:bg-slate-700">-</button>
+                <span id="quantityDisplay" class="font-bold text-sm text-cyan-400">1</span>
+                <button onclick="updateQuantity(1)" class="w-7 h-7 bg-slate-800 rounded-lg flex items-center justify-center font-bold hover:bg-slate-700">+</button>
+            </div>
+        </div>
+
+        <button onclick="sendWhatsAppOrder()" class="w-full bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-bold py-3 px-4 rounded-xl text-xs flex items-center justify-center gap-2 shadow-lg transition active:scale-95">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path></svg>
+            Tuma Oda WhatsApp (<span id="btnQty">1</span> Pcs)
+        </button>
+        
+        <div id="orderConfirmation" class="text-center text-[10px] text-emerald-400 mt-2 flex items-center justify-center gap-1" style="display: none;">
+             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg> Oda imeandaliwa!
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="text-center text-[10px] text-slate-500 mt-8">
+        © 2026 Mizani Tanzania • Designed for Android & iPhone 📱✨<br/>
+        Hosted on Vercel from GitHub Repo: zaruckally-sudo/Mizani-tanzania-
+    </footer>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // AI Logic
+        function aiRecommend(type) {
+            const recEl = document.getElementById('aiRecommendation');
+            const recText = document.getElementById('aiRecText');
+            recEl.classList.remove('active');
+            
+            setTimeout(() => {
+                let rec = '';
+                if (type === 'duka') {
+                    rec = "Mzani mzuri kwako ni **Digital Counter Scale (Kilo 40-50)**. Ni mwepesi, una betri ya kudumu, na unatosha nafaka au maduka madogo.";
+                } else if (type === 'kiwanda') {
+                    rec = "Tunakushauri **Industrial Platform Scale (Kilo 150-300)** wenye chuma kigumu na nguzo. Unamudu mizigo mizito ya magunia.";
+                } else {
+                    rec = "Kwa afya, tunayo **Bathroom Scale (Kilo 180)** yenye kioo kigumu na usahihi wa hali ya juu.";
+                }
+                recText.innerHTML = rec;
+                recEl.classList.add('active');
+            }, 100);
+        }
+
+        // Part Breakdown Data & Logic
+        const parts = {
+            display: { title: "📺 Kichwa & Display", desc: "Digital Display yenye LED kali ya kuona usiku/mchana. Ndani kuna microchip ya usahihi wa gramu 0.1.", material: "ABS Plastic & hardened anti-scratch glass." },
+            body: { title: "⚖️ Mwili (Platform)", desc: "Heavy-duty platform inayoweza kuhimili mizigo mikubwa bila kupinda au kutu.", material: "Stainless Steel frame & mabati kuzuia kutu." },
+            sensor: { title: "⚙️ Load Cell Sensor", desc: "Moyo wa mzani. Hii inapokea mzigo na kutuma signal ya namba papo hapo kwenye display.", material: "High-grade Aluminum/Alloy Steel." }
+        };
+
+        function showPart(partId) {
+            const details = parts[partId];
+            const partEl = document.getElementById('partDetails');
+            document.getElementById('partTitle').innerHTML = details.title;
+            document.getElementById('partDesc').innerHTML = details.desc;
+            document.getElementById('partMaterial').innerHTML = details.material;
+            partEl.classList.add('active');
+        }
+
+        function closePart() {
+            document.getElementById('partDetails').classList.remove('active');
+        }
+
+        // Ordering System Logic
+        let quantity = 1;
+        function updateQuantity(amount) {
+            quantity = Math.max(1, quantity + amount);
+            document.getElementById('quantityDisplay').innerText = quantity;
+            document.getElementById('btnQty').innerText = quantity;
+        }
+
+        function sendWhatsAppOrder() {
+            const phoneNumber = "255685048565"; // WEKA NAMBA YAKO HAPA (Mfano: 25576xxxxxx)
+            const message = `Habari Mizani Tanzania! Nataka kuagiza bidhaa. Idadi (Pieces): ${quantity}. Tafadhali nipe maelekezo zaidi.`;
+            const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+            window.open(url, '_blank');
+            document.getElementById('orderConfirmation').style.display = 'flex';
+        }
+    </style>
+</body>
+</html>
