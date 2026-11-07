@@ -4,346 +4,72 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#07111f">
-  <meta name="description" content="Pata mizani za kidijitali kwa biashara, viwanda na matumizi ya nyumbani. Uliza ushauri na tuma oda moja kwa moja WhatsApp.">
+  <meta name="description" content="Mizani Tanzania: mizani za biashara, viwanda na matumizi ya nyumbani. Uliza ushauri na tuma oda kupitia WhatsApp.">
   <title>Mizani Tanzania | Mizani za Kidijitali</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            ink: '#07111f',
-            panel: '#101d2d',
-            gold: '#f7c76a',
-            goldSoft: '#e8b658',
-            aqua: '#39c7d8',
-            charcoal: '#0b0f17'
-          },
-          boxShadow: {
-            glow: '0 12px 50px rgba(247,199,106,.10)'
-          }
-        }
-      }
-    };
-  </script>
+  <script>tailwind.config={theme:{extend:{colors:{ink:'#07111f',gold:'#f7c76a',aqua:'#39c7d8'}}}};</script>
   <style>
-    :root { color-scheme: dark; }
-    body {
-      background:
-        radial-gradient(circle at top left, rgba(247,199,106,.12), transparent 24%),
-        radial-gradient(circle at bottom right, rgba(57,199,216,.08), transparent 30%),
-        #050b12;
-    }
-    .glass {
-      background: rgba(12, 19, 27, 0.82);
-      border: 1px solid rgba(255,255,255,0.08);
-      backdrop-filter: blur(14px);
-    }
-    .brand-gold {
-      background: linear-gradient(180deg, #f5d286 0%, #d9a74a 30%, #f7c76a 100%);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      text-shadow: 0 4px 18px rgba(247,199,106,.18);
-    }
-    .brand-sub {
-      letter-spacing: .22em;
-    }
-    .product-art {
-      background: radial-gradient(circle at 50% 35%, rgba(57,199,216,.18), transparent 48%), linear-gradient(145deg,#13253a,#0b1524);
-    }
-    .focus-ring:focus-visible { outline: 3px solid #39c7d8; outline-offset: 3px; }
-    .gallery-card.active { border-color: rgba(247,199,106,.8); box-shadow: 0 0 0 1px rgba(247,199,106,.2); }
+    :root{color-scheme:dark} body{background-color:#050a11;background-image:radial-gradient(ellipse at 12% 8%,rgba(247,199,106,.13),transparent 32%),radial-gradient(ellipse at 92% 27%,rgba(57,199,216,.10),transparent 34%),radial-gradient(ellipse at 48% 80%,rgba(89,65,123,.10),transparent 38%),linear-gradient(135deg,#050a11,#09121d 48%,#060b12);background-attachment:fixed}
+    body:before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.13;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:44px 44px;mask-image:linear-gradient(to bottom,#000,transparent 88%)}
+    .glass{background:linear-gradient(135deg,rgba(255,255,255,.085),rgba(255,255,255,.025) 48%,rgba(247,199,106,.035));border:1px solid rgba(255,255,255,.13);box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 18px 55px rgba(0,0,0,.24);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
+    .glass-soft{background:linear-gradient(145deg,rgba(255,255,255,.065),rgba(255,255,255,.018));border:1px solid rgba(255,255,255,.10);box-shadow:inset 0 1px 0 rgba(255,255,255,.06),0 12px 35px rgba(0,0,0,.18);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+    .brand-gold{background:linear-gradient(180deg,#fff0c4,#e7b655 45%,#f8d88d);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 5px 16px rgba(247,199,106,.16))}
+    .ornament{height:1px;background:linear-gradient(90deg,transparent,rgba(247,199,106,.72),rgba(255,255,255,.2),transparent)}.focus-ring:focus-visible{outline:3px solid #39c7d8;outline-offset:3px}.gallery-thumb.active{border-color:rgba(247,199,106,.85);box-shadow:0 0 0 1px rgba(247,199,106,.25)}
+    @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}.float{animation:float 7s ease-in-out infinite}@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}}
   </style>
 </head>
-<body class="min-h-screen pb-24 font-sans text-slate-100 selection:bg-gold selection:text-ink">
-  <header class="sticky top-0 z-40 border-b border-white/10 bg-ink/90 backdrop-blur-xl">
-    <div class="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3 sm:px-6">
-      <a href="#home" class="flex items-center gap-3" aria-label="Mizani Tanzania, mwanzo">
-        <div class="flex h-12 w-12 items-center justify-center overflow-hidden rounded-xl border border-gold/40 bg-[#0d1520] shadow-lg shadow-gold/10">
-          <img src="logo.png" alt="Nembo ya Mizani Tanzania" class="h-full w-full object-cover" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'text-3xl\'>⚖️</div>'">
-        </div>
-        <div>
-          <div class="brand-gold text-base font-black tracking-[.18em] sm:text-lg">MIZANI</div>
-          <div class="text-[10px] font-semibold uppercase tracking-[.24em] text-slate-300">Equity • Justice • Advisory</div>
-        </div>
-      </a>
-      <nav class="hidden items-center gap-6 text-sm text-slate-300 md:flex" aria-label="Menyu kuu">
-        <a class="hover:text-gold transition" href="#bidhaa">Bidhaa</a>
-        <a class="hover:text-gold transition" href="#gallery">Gallery</a>
-        <a class="hover:text-gold transition" href="#ushauri">Msaada wa kuchagua</a>
-        <a class="hover:text-gold transition" href="#maswali">Maswali</a>
-      </nav>
-      <a href="https://wa.me/255685048565?text=Habari%20Mizani%20Tanzania%2C%20naomba%20msaada." target="_blank" rel="noopener noreferrer" class="focus-ring rounded-xl bg-emerald-600 px-3 py-2 text-xs font-bold text-white transition hover:bg-emerald-500 sm:px-4 sm:text-sm">
-        WhatsApp <span aria-hidden="true">↗</span>
-      </a>
-    </div>
-  </header>
+<body class="min-h-screen pb-20 font-sans text-slate-100 selection:bg-gold selection:text-ink">
+  <div aria-hidden="true" class="pointer-events-none fixed inset-0 z-0 overflow-hidden"><div class="float absolute -left-24 top-40 h-72 w-72 rounded-full border border-gold/10"></div><div class="absolute -right-32 top-[38rem] h-96 w-96 rounded-full border border-aqua/10"></div><div class="absolute left-[12%] top-[29rem] h-2 w-2 rounded-full bg-gold/70 shadow-[0_0_22px_5px_rgba(247,199,106,.25)]"></div><div class="absolute right-[15%] top-[72rem] h-1.5 w-1.5 rounded-full bg-aqua/70 shadow-[0_0_20px_5px_rgba(57,199,216,.24)]"></div></div>
+  <header class="sticky top-0 z-40 border-b border-white/10 bg-[#07111f]/75 backdrop-blur-2xl"><div class="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3 sm:px-6">
+    <a href="#home" class="flex items-center gap-3" aria-label="Mizani Tanzania, mwanzo"><div class="flex h-12 w-12 items-center justify-center overflow-hidden rounded-xl border border-gold/40 bg-black/50 shadow-lg shadow-gold/10"><img src="logo.png" alt="Nembo ya Mizani Tanzania" class="h-full w-full object-cover" onerror="this.style.display='none';this.parentElement.innerHTML='<span class=\'text-3xl\'>⚖️</span>'"></div><div><div class="brand-gold text-base font-black tracking-[.18em] sm:text-lg">MIZANI</div><div class="text-[10px] font-semibold uppercase tracking-[.2em] text-slate-300">Tanzania · Digital Scales</div></div></a>
+    <nav class="hidden items-center gap-6 text-sm text-slate-300 md:flex" aria-label="Menyu kuu"><a class="hover:text-gold" href="#bidhaa">Bidhaa</a><a class="hover:text-gold" href="#gallery">Picha</a><a class="hover:text-gold" href="#about">Kuhusu</a><a class="hover:text-gold" href="#ushauri">Ushauri</a></nav>
+    <a href="https://wa.me/255685048565?text=Habari%20Mizani%20Tanzania%2C%20naomba%20msaada." target="_blank" rel="noopener noreferrer" class="focus-ring rounded-xl bg-emerald-600 px-3 py-2 text-xs font-bold text-white hover:bg-emerald-500 sm:px-4 sm:text-sm">WhatsApp ↗</a>
+  </div></header>
+  <main id="home" class="relative z-10 mx-auto max-w-6xl space-y-14 px-4 py-7 sm:px-6 sm:py-10">
+    <section class="glass relative overflow-hidden rounded-[2rem] p-6 shadow-[0_25px_90px_rgba(0,0,0,.35)] sm:p-10 lg:p-14"><div class="pointer-events-none absolute -right-16 -top-20 h-80 w-80 rounded-full bg-gold/10 blur-3xl"></div><div class="pointer-events-none absolute -bottom-24 -left-16 h-72 w-72 rounded-full bg-aqua/10 blur-3xl"></div><div class="relative grid items-center gap-8 md:grid-cols-[1.12fr_.88fr]">
+      <div><span class="inline-flex rounded-full border border-gold/30 bg-gold/10 px-3 py-1.5 text-[11px] font-bold text-gold">KARIAKOO & KISUTU · DAR ES SALAAM</span><h1 class="mt-5 max-w-2xl text-3xl font-black leading-tight sm:text-5xl">Pata mzani unaofaa <span class="brand-gold">biashara yako.</span></h1><p class="mt-4 max-w-xl text-sm leading-7 text-slate-300 sm:text-base">Angalia picha za mizani zetu, pata mwongozo wa kuchagua, kisha uliza au tuma oda moja kwa moja WhatsApp.</p><div class="mt-7 flex flex-wrap gap-3"><a href="#bidhaa" class="focus-ring rounded-xl bg-gradient-to-r from-gold to-amber-500 px-5 py-3 text-sm font-extrabold text-ink">Angalia bidhaa ↓</a><a href="#ushauri" class="focus-ring rounded-xl border border-slate-500/60 bg-white/5 px-5 py-3 text-sm font-bold hover:border-aqua">Nisaidie kuchagua</a></div><div class="mt-7 flex flex-wrap gap-x-5 gap-y-2 text-xs text-slate-300"><span>✓ Msaada wa kuchagua</span><span>✓ Oda kupitia WhatsApp</span><span>✓ Uliza kuhusu usafirishaji</span></div></div>
+      <div class="relative mx-auto w-full max-w-sm"><div class="float absolute inset-3 rounded-full bg-gold/10 blur-2xl"></div><div class="glass relative rounded-[2rem] p-4 text-center"><div class="flex h-56 items-center justify-center overflow-hidden rounded-[1.5rem] border border-gold/20 bg-black/35"><img src="logo.png" alt="Nembo ya Mizani Tanzania" class="h-full w-full object-contain p-2"></div><div class="ornament my-4"></div><p class="text-xs font-semibold uppercase tracking-[.2em] text-gold">Mizani Tanzania</p><p class="mt-2 text-xs text-slate-300">Usahihi · Uaminifu · Huduma</p></div></div>
+    </div></section>
 
-  <main id="home" class="mx-auto max-w-6xl space-y-16 px-4 py-7 sm:px-6 sm:py-10">
-    <section class="glass relative overflow-hidden rounded-[2rem] p-6 shadow-glow sm:p-10 lg:p-14">
-      <div class="pointer-events-none absolute -right-20 -top-20 h-72 w-72 rounded-full bg-gold/10 blur-3xl"></div>
-      <div class="pointer-events-none absolute -bottom-24 -left-16 h-64 w-64 rounded-full bg-aqua/10 blur-3xl"></div>
-      <div class="relative grid items-center gap-8 md:grid-cols-[1.12fr_.88fr]">
-        <div>
-          <span class="inline-flex rounded-full border border-gold/30 bg-gold/10 px-3 py-1.5 text-[11px] font-bold tracking-wide text-gold">KARIAKOO & KISUTU · DAR ES SALAAM</span>
-          <h1 class="mt-5 max-w-2xl text-3xl font-black leading-tight sm:text-5xl">Pata mzani unaofaa <span class="brand-gold">biashara yako.</span></h1>
-          <p class="mt-4 max-w-xl text-sm leading-7 text-slate-300 sm:text-base">Angalia chaguo za mizani, pata mwongozo wa kuchagua, kisha tuma oda au uliza swali moja kwa moja WhatsApp.</p>
-          <div class="mt-7 flex flex-wrap gap-3">
-            <a href="#bidhaa" class="focus-ring rounded-xl bg-gradient-to-r from-gold to-amber-500 px-5 py-3 text-sm font-extrabold text-ink transition hover:brightness-110">Angalia bidhaa <span aria-hidden="true">↓</span></a>
-            <a href="#ushauri" class="focus-ring rounded-xl border border-slate-600 bg-slate-900/50 px-5 py-3 text-sm font-bold text-slate-100 transition hover:border-aqua">Nisaidie kuchagua</a>
-          </div>
-          <div class="mt-7 flex flex-wrap gap-x-5 gap-y-2 text-xs text-slate-400">
-            <span>✓ Msaada wa kuchagua</span><span>✓ Oda kupitia WhatsApp</span><span>✓ Uliza kuhusu usafirishaji</span>
-          </div>
-        </div>
-        <div class="relative mx-auto w-full max-w-sm">
-          <div class="absolute inset-4 rounded-full bg-gold/10 blur-2xl"></div>
-          <div class="glass relative rounded-[2rem] p-5 text-center">
-            <div class="mx-auto flex h-56 items-center justify-center overflow-hidden rounded-[1.5rem] bg-[#0b1119] ring-1 ring-gold/20" aria-hidden="true">
-              <img src="logo.png" alt="Mizani Tanzania Logo" class="h-full w-full object-contain p-2">
-            </div>
-            <p class="mt-4 text-xs font-semibold uppercase tracking-[.2em] text-gold">Brand standard</p>
-            <p class="mt-2 text-xs text-slate-300">Premium balance • trust • reliability</p>
-          </div>
-        </div>
+    <section id="about" class="scroll-mt-24"><div class="mb-5"><p class="text-xs font-bold uppercase tracking-[.18em] text-gold">Kwa nini Mizani Tanzania?</p><h2 class="mt-2 text-2xl font-black sm:text-3xl">Huduma inayokusaidia kuchagua kwa uhakika</h2></div><div class="grid gap-4 md:grid-cols-3">
+      <article class="glass-soft rounded-3xl p-5 transition hover:-translate-y-1 hover:border-gold/30"><div class="mb-4 flex h-11 w-11 items-center justify-center rounded-2xl border border-gold/25 bg-gold/10 text-xl">⚖️</div><h3 class="text-lg font-bold">Chaguo kwa matumizi yako</h3><p class="mt-2 text-sm leading-6 text-slate-400">Angalia mizani ya duka, biashara, viwanda au matumizi ya nyumbani, kisha uliza ushauri kabla ya kuamua.</p></article>
+      <article class="glass-soft rounded-3xl p-5 transition hover:-translate-y-1 hover:border-gold/30"><div class="mb-4 flex h-11 w-11 items-center justify-center rounded-2xl border border-aqua/25 bg-aqua/10 text-xl">💬</div><h3 class="text-lg font-bold">Mawasiliano ya moja kwa moja</h3><p class="mt-2 text-sm leading-6 text-slate-400">Tuma maelezo ya bidhaa na idadi unayotaka. Ujumbe wa oda utafunguka moja kwa moja kwenye WhatsApp.</p></article>
+      <article class="glass-soft rounded-3xl p-5 transition hover:-translate-y-1 hover:border-gold/30"><div class="mb-4 flex h-11 w-11 items-center justify-center rounded-2xl border border-emerald-400/25 bg-emerald-400/10 text-xl">📦</div><h3 class="text-lg font-bold">Thibitisha maelezo kwanza</h3><p class="mt-2 text-sm leading-6 text-slate-400">Wasiliana nasi kuthibitisha bei, upatikanaji, uwezo na gharama ya usafirishaji kabla ya malipo.</p></article>
+    </div></section>
+
+    <section id="bidhaa" class="scroll-mt-24"><div class="mb-5"><p class="text-xs font-bold uppercase tracking-[.18em] text-gold">Picha halisi kutoka kwenye repo yako</p><h2 class="mt-2 text-2xl font-black sm:text-3xl">Mizani zetu</h2><p class="mt-2 max-w-2xl text-xs leading-5 text-slate-400">Picha zimehonishwa moja kwa moja kutoka GitHub. Uliza WhatsApp kuthibitisha modeli, uwezo na bei husika—picha zinaonyesha mizani tofauti.</p></div>
+      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <article class="glass-soft overflow-hidden rounded-3xl transition hover:-translate-y-1 hover:border-gold/40"><button type="button" class="block w-full" onclick="openGallery(0)"><img src="snaptik_7505337985043270967_0.jpg" alt="Mzani wa dukani, picha halisi" class="h-64 w-full bg-slate-900 object-cover" loading="lazy" onerror="this.src='DSC_0017.jpg'"></button><div class="p-5"><p class="text-[10px] font-bold uppercase tracking-widest text-gold">Picha halisi · Dukani</p><h3 class="mt-2 text-lg font-extrabold">Mizani ya bakuli</h3><p class="mt-1 text-xs text-slate-400">Angalia muonekano wa mzani wa bakuli kwenye duka.</p><div class="mt-4 flex items-center justify-between"><span class="text-xs font-bold text-aqua">Uliza bei</span><button onclick="selectProduct('Mizani ya bakuli')" class="focus-ring rounded-xl bg-aqua px-3 py-2 text-xs font-extrabold text-ink">Uliza / Agiza</button></div></div></article>
+        <article class="glass-soft overflow-hidden rounded-3xl transition hover:-translate-y-1 hover:border-gold/40"><button type="button" class="block w-full" onclick="openGallery(1)"><img src="snaptik_7505353894176754949_0.jpg" alt="Mizani mbalimbali za biashara, picha halisi" class="h-64 w-full bg-slate-900 object-cover" loading="lazy" onerror="this.src='DSC_0019.jpg'"></button><div class="p-5"><p class="text-[10px] font-bold uppercase tracking-widest text-gold">Picha halisi · Biashara</p><h3 class="mt-2 text-lg font-extrabold">Mizani za kaunta</h3><p class="mt-1 text-xs text-slate-400">Mifano ya mizani ya biashara na display tofauti.</p><div class="mt-4 flex items-center justify-between"><span class="text-xs font-bold text-aqua">Uliza bei</span><button onclick="selectProduct('Mzani wa kaunta')" class="focus-ring rounded-xl bg-aqua px-3 py-2 text-xs font-extrabold text-ink">Uliza / Agiza</button></div></div></article>
+        <article class="glass-soft overflow-hidden rounded-3xl transition hover:-translate-y-1 hover:border-gold/40"><button type="button" class="block w-full" onclick="openGallery(2)"><img src="snaptik_7520695538178624824_0.jpg" alt="Mizani ya jukwaa, picha halisi" class="h-64 w-full bg-slate-900 object-cover" loading="lazy" onerror="this.src='DSC_0020.jpg'"></button><div class="p-5"><p class="text-[10px] font-bold uppercase tracking-widest text-gold">Picha halisi · Mizigo</p><h3 class="mt-2 text-lg font-extrabold">Mzani wa jukwaa</h3><p class="mt-1 text-xs text-slate-400">Kwa mizigo; uliza uwezo wa kilo na ukubwa wa jukwaa.</p><div class="mt-4 flex items-center justify-between"><span class="text-xs font-bold text-aqua">Uliza bei</span><button onclick="selectProduct('Mzani wa jukwaa')" class="focus-ring rounded-xl bg-aqua px-3 py-2 text-xs font-extrabold text-ink">Uliza / Agiza</button></div></div></article>
       </div>
     </section>
 
-    <section id="bidhaa" class="scroll-mt-24">
-      <div class="mb-5 flex flex-wrap items-end justify-between gap-3">
-        <div><p class="text-xs font-bold uppercase tracking-[.18em] text-gold">Chagua unachohitaji</p><h2 class="mt-2 text-2xl font-black sm:text-3xl">Bidhaa zetu</h2></div>
-        <p class="max-w-sm text-xs leading-5 text-slate-400">Bei na maelezo ni ya kuthibitisha na muuzaji kabla ya malipo. Chagua bidhaa ili kuandaa oda.</p>
-      </div>
-      <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-        <article class="glass overflow-hidden rounded-3xl transition hover:-translate-y-1 hover:border-gold/40">
-          <div class="product-art relative flex h-48 items-center justify-center">
-            <img src="https://images.unsplash.com/photo-1584438784894-089d6a62b8fa?auto=format&fit=crop&w=900&q=80" alt="Digital Counter Scale" class="h-full w-full object-cover" loading="lazy">
-            <span class="absolute left-3 top-3 rounded-full bg-gold px-2.5 py-1 text-[10px] font-black text-ink">INAPENDWA</span>
-          </div>
-          <div class="p-5">
-            <p class="text-[10px] font-bold uppercase tracking-widest text-gold">Duka · Reja reja</p>
-            <h3 class="mt-2 text-lg font-extrabold">Digital Counter Scale</h3>
-            <p class="mt-1 text-xs text-slate-400">Uwezo uliotajwa: 40 kg · inafaa kwa bidhaa za dukani na nafaka.</p>
-            <div class="mt-4 flex items-center justify-between gap-2"><span class="font-black text-aqua">TZS 150,000/=</span><button type="button" onclick="selectProduct('Digital Counter Scale (40kg)')" class="focus-ring rounded-xl bg-aqua px-3 py-2 text-xs font-extrabold text-ink hover:brightness-110">Chagua bidhaa</button></div>
-          </div>
-        </article>
-        <article class="glass overflow-hidden rounded-3xl transition hover:-translate-y-1 hover:border-gold/40">
-          <div class="product-art relative flex h-48 items-center justify-center">
-            <img src="https://images.unsplash.com/photo-1578916171728-46686eac8d58?auto=format&fit=crop&w=900&q=80" alt="Industrial Platform Scale" class="h-full w-full object-cover" loading="lazy">
-          </div>
-          <div class="p-5">
-            <p class="text-[10px] font-bold uppercase tracking-widest text-gold">Viwanda · Mizigo</p>
-            <h3 class="mt-2 text-lg font-extrabold">Industrial Platform Scale</h3>
-            <p class="mt-1 text-xs text-slate-400">Uwezo uliotajwa: 150 kg · kwa mizigo na magunia.</p>
-            <div class="mt-4 flex items-center justify-between gap-2"><span class="font-black text-aqua">TZS 350,000/=</span><button type="button" onclick="selectProduct('Industrial Platform Scale (150kg)')" class="focus-ring rounded-xl bg-aqua px-3 py-2 text-xs font-extrabold text-ink hover:brightness-110">Chagua bidhaa</button></div>
-          </div>
-        </article>
-        <article class="glass overflow-hidden rounded-3xl transition hover:-translate-y-1 hover:border-gold/40">
-          <div class="product-art relative flex h-48 items-center justify-center">
-            <img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=900&q=80" alt="Digital Bathroom Scale" class="h-full w-full object-cover" loading="lazy">
-          </div>
-          <div class="p-5">
-            <p class="text-[10px] font-bold uppercase tracking-widest text-gold">Nyumbani · Afya</p>
-            <h3 class="mt-2 text-lg font-extrabold">Digital Bathroom Scale</h3>
-            <p class="mt-1 text-xs text-slate-400">Kwa matumizi ya nyumbani. Uliza kuhusu uwezo, vipimo na upatikanaji.</p>
-            <div class="mt-4 flex items-center justify-between gap-2"><span class="font-black text-aqua">Uliza bei</span><button type="button" onclick="selectProduct('Digital Bathroom Scale')" class="focus-ring rounded-xl bg-aqua px-3 py-2 text-xs font-extrabold text-ink hover:brightness-110">Uliza / Agiza</button></div>
-          </div>
-        </article>
-      </div>
-    </section>
+    <section id="gallery" class="scroll-mt-24"><div class="mb-5"><p class="text-xs font-bold uppercase tracking-[.18em] text-gold">Gallery ya picha halisi</p><h2 class="mt-2 text-2xl font-black">Karibu uangalie mizani</h2></div><div class="grid gap-6 lg:grid-cols-[1.2fr_.8fr]">
+      <div class="glass rounded-3xl p-4"><div class="grid grid-cols-3 gap-3"><button class="gallery-thumb active overflow-hidden rounded-xl border border-white/10" data-index="0"><img src="snaptik_7505337985043270967_0.jpg" alt="Mzani wa bakuli" class="h-20 w-full object-cover" loading="lazy"></button><button class="gallery-thumb overflow-hidden rounded-xl border border-white/10" data-index="1"><img src="snaptik_7505353894176754949_0.jpg" alt="Mizani za biashara" class="h-20 w-full object-cover" loading="lazy"></button><button class="gallery-thumb overflow-hidden rounded-xl border border-white/10" data-index="2"><img src="snaptik_7520695538178624824_0.jpg" alt="Mzani wa jukwaa" class="h-20 w-full object-cover" loading="lazy"></button></div><img id="galleryMainImage" src="snaptik_7505337985043270967_0.jpg" alt="Picha halisi ya mzani wa bakuli" class="mt-3 h-[300px] w-full rounded-2xl border border-white/10 bg-black/30 object-contain sm:h-[430px]"><p class="px-1 pt-3 text-[10px] text-slate-400">Picha halisi kutoka kwenye picha ulizopakia kwenye repository.</p></div>
+      <div class="space-y-4"><div class="glass-soft rounded-3xl p-5"><p class="text-[10px] font-bold uppercase tracking-[.18em] text-gold">Bidhaa iliyochaguliwa</p><h3 id="galleryTitle" class="mt-2 text-xl font-black">Mzani wa bakuli</h3><p id="galleryDescription" class="mt-3 text-sm leading-6 text-slate-400">Picha ya mzani wa bakuli kutoka kwenye mkusanyiko wako. Wasiliana nasi kuthibitisha uwezo na bei.</p><div class="ornament my-4"></div><p class="text-xs text-slate-400">Picha zilizopo zinaonyesha mizani tofauti; si picha za mzunguko wa 360° wa bidhaa moja.</p></div><div class="glass-soft rounded-3xl p-5"><p class="text-[10px] font-bold uppercase tracking-[.18em] text-aqua">Tayari kuagiza?</p><h3 class="mt-2 text-lg font-black">Tuma oda au uliza swali</h3><p class="mt-2 text-sm leading-6 text-slate-400">Chagua picha unayoipenda kisha tuma jina lake kwenye WhatsApp.</p><button onclick="selectProduct('Mzani wa jukwaa')" class="focus-ring mt-4 rounded-xl bg-gradient-to-r from-gold to-amber-500 px-4 py-3 text-sm font-extrabold text-ink">Chagua bidhaa</button></div></div>
+    </div></section>
 
-    <section id="gallery" class="scroll-mt-24">
-      <div class="mb-5 flex items-end justify-between gap-3">
-        <div>
-          <p class="text-xs font-bold uppercase tracking-[.18em] text-gold">Gallery ya bidhaa</p>
-          <h2 class="mt-2 text-2xl font-black">Picha za bidhaa na sehemu za ndani</h2>
-        </div>
-        <p class="hidden max-w-md text-xs leading-5 text-slate-400 sm:block">Picha hizi zimetumika kama picha halisi za kampuni kwa ukubwa wa tovuti; unaweza kubadilisha kwa picha za bidhaa yako halisi baadaye.</p>
-      </div>
+    <section id="ushauri" class="scroll-mt-24 grid gap-5 lg:grid-cols-[.8fr_1.2fr]"><div><p class="text-xs font-bold uppercase tracking-[.18em] text-gold">Mwongozo wa haraka</p><h2 class="mt-2 text-2xl font-black">Msaidizi wa kuchagua</h2><p class="mt-3 text-sm leading-6 text-slate-400">Chagua matumizi yako upate pendekezo la kuanzia. Huu ni mwongozo wa tovuti, si AI inayojifunza; thibitisha uwezo na bei na muuzaji.</p></div><div class="glass rounded-3xl p-5 sm:p-6"><h3 class="text-sm font-bold">Unahitaji mzani kwa matumizi gani?</h3><div class="mt-4 grid gap-2 sm:grid-cols-3"><button onclick="recommend('duka')" class="focus-ring rounded-xl border border-white/10 bg-white/5 p-3 text-left text-xs font-semibold hover:border-gold">🏪<span class="mt-1 block">Duka / reja reja</span></button><button onclick="recommend('viwanda')" class="focus-ring rounded-xl border border-white/10 bg-white/5 p-3 text-left text-xs font-semibold hover:border-gold">🏭<span class="mt-1 block">Viwanda / mizigo</span></button><button onclick="recommend('nyumbani')" class="focus-ring rounded-xl border border-white/10 bg-white/5 p-3 text-left text-xs font-semibold hover:border-gold">🏠<span class="mt-1 block">Nyumbani / afya</span></button></div><div id="recommendation" class="mt-4 hidden rounded-2xl border border-gold/30 bg-gold/10 p-4 text-sm leading-6 text-yellow-100" role="status" aria-live="polite"></div></div></section>
 
-      <div class="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
-        <div class="glass rounded-3xl p-4">
-          <div class="mb-4 grid gap-3 sm:grid-cols-3">
-            <button type="button" class="gallery-card active rounded-2xl border border-slate-700 bg-slate-900/80 p-3 text-left transition hover:border-gold" data-index="0">
-              <span class="text-[10px] font-bold uppercase tracking-widest text-gold">Display</span>
-              <p class="mt-2 text-sm font-bold">Kichwa & screen</p>
-            </button>
-            <button type="button" class="gallery-card rounded-2xl border border-slate-700 bg-slate-900/80 p-3 text-left transition hover:border-gold" data-index="1">
-              <span class="text-[10px] font-bold uppercase tracking-widest text-gold">Platform</span>
-              <p class="mt-2 text-sm font-bold">Body / chuma</p>
-            </button>
-            <button type="button" class="gallery-card rounded-2xl border border-slate-700 bg-slate-900/80 p-3 text-left transition hover:border-gold" data-index="2">
-              <span class="text-[10px] font-bold uppercase tracking-widest text-gold">Sensor</span>
-              <p class="mt-2 text-sm font-bold">Load cell</p>
-            </button>
-          </div>
+    <section id="agiza" class="scroll-mt-24"><div class="glass rounded-3xl border border-emerald-500/25 p-5 sm:p-7"><div class="grid gap-6 md:grid-cols-[1fr_.85fr] md:items-center"><div><p class="text-xs font-bold uppercase tracking-[.18em] text-emerald-400">Rahisi na moja kwa moja</p><h2 class="mt-2 text-2xl font-black">Tuma oda WhatsApp</h2><p class="mt-2 text-sm leading-6 text-slate-400">Chagua bidhaa na idadi. WhatsApp itafunguka na ujumbe ulioandaliwa; bonyeza “Tuma” humo.</p></div><div class="rounded-2xl border border-white/10 bg-black/25 p-4"><label for="orderProduct" class="mb-2 block text-xs font-semibold text-slate-300">Bidhaa unayotaka</label><select id="orderProduct" class="focus-ring w-full rounded-xl border border-white/10 bg-slate-900 px-3 py-3 text-sm text-white"><option value="">-- Chagua bidhaa --</option><option>Mzani wa bakuli</option><option>Mzani wa kaunta</option><option>Mzani wa jukwaa</option><option>Mzani mwingine</option></select><div class="mt-3 grid grid-cols-2 gap-3"><div><label for="customerName" class="mb-2 block text-xs font-semibold text-slate-300">Jina (hiari)</label><input id="customerName" type="text" autocomplete="name" placeholder="Jina lako" class="focus-ring w-full rounded-xl border border-white/10 bg-slate-900 px-3 py-3 text-sm"></div><div><label for="quantity" class="mb-2 block text-xs font-semibold text-slate-300">Idadi</label><input id="quantity" type="number" min="1" max="99" value="1" class="focus-ring w-full rounded-xl border border-white/10 bg-slate-900 px-3 py-3 text-sm"></div></div><label for="customerLocation" class="mb-2 mt-3 block text-xs font-semibold text-slate-300">Eneo la usafirishaji (hiari)</label><input id="customerLocation" type="text" placeholder="Mfano: Dar es Salaam" class="focus-ring w-full rounded-xl border border-white/10 bg-slate-900 px-3 py-3 text-sm"><button onclick="sendOrder()" class="focus-ring mt-4 w-full rounded-xl bg-emerald-600 px-4 py-3.5 text-sm font-black text-white hover:bg-emerald-500">Tengeneza oda WhatsApp ↗</button><p id="orderError" class="mt-2 hidden text-xs text-rose-300" role="alert"></p></div></div></div></section>
 
-          <div class="rounded-2xl border border-slate-700 bg-slate-950/70 p-3">
-            <img id="galleryMainImage" src="https://images.unsplash.com/photo-1584438784894-089d6a62b8fa?auto=format&fit=crop&w=1200&q=80" alt="Mzani wa mfano - display" class="h-[300px] w-full rounded-xl object-cover">
-          </div>
-        </div>
-
-        <div class="space-y-4">
-          <div class="glass rounded-3xl p-5">
-            <p class="text-[10px] font-bold uppercase tracking-[.18em] text-gold">Maelezo ya bidhaa</p>
-            <h3 id="galleryTitle" class="mt-2 text-xl font-black">Display ya mzani</h3>
-            <p id="galleryDescription" class="mt-3 text-sm leading-6 text-slate-400">Inatoa usomaji wa uzito kwa haraka, yenye skrini ya LED inayofanya kazi vizuri kwenye mwanga wa jua na usiku.</p>
-            <div class="mt-4 flex items-center justify-between gap-3 rounded-2xl border border-slate-700 bg-slate-900/70 p-3">
-              <span class="text-xs text-slate-400">Mifumo ya msingi</span>
-              <span class="text-sm font-bold text-aqua">Digital + Sensor</span>
-            </div>
-          </div>
-          <div class="glass rounded-3xl p-5">
-            <p class="text-[10px] font-bold uppercase tracking-[.18em] text-gold">Kitu kinachofuata</p>
-            <h3 class="mt-2 text-lg font-black">Kuanza 360° view</h3>
-            <p class="mt-3 text-sm leading-6 text-slate-400">Ukishaweka picha za kweli kwa pande mbalimbali, tunaweza kuziweka kwenye sehemu hii kwa formati ya 360° na view ya bidhaa iliyo karibu.</p>
-            <button type="button" onclick="selectProduct('Industrial Platform Scale (150kg)')" class="focus-ring mt-4 rounded-xl bg-gradient-to-r from-gold to-amber-500 px-4 py-3 text-sm font-extrabold text-ink hover:brightness-110">Chagua bidhaa kwa oda</button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="ushauri" class="scroll-mt-24 grid gap-5 lg:grid-cols-[.8fr_1.2fr]">
-      <div><p class="text-xs font-bold uppercase tracking-[.18em] text-gold">Mwongozo wa haraka</p><h2 class="mt-2 text-2xl font-black">Msaidizi wa kuchagua</h2><p class="mt-3 text-sm leading-6 text-slate-400">Jibu swali fupi ili upate pendekezo la kuanzia. Huu ni mwongozo wa tovuti, si AI inayojifunza; muuzaji atakusaidia kuthibitisha uwezo na bei.</p></div>
-      <div class="glass rounded-3xl p-5 sm:p-6">
-        <h3 class="text-sm font-bold">Unahitaji mzani kwa matumizi gani?</h3>
-        <div class="mt-4 grid gap-2 sm:grid-cols-3">
-          <button type="button" onclick="recommend('duka')" class="focus-ring rounded-xl border border-slate-700 bg-slate-900/70 p-3 text-left text-xs font-semibold transition hover:border-gold">🏪<span class="mt-1 block">Duka / reja reja</span></button>
-          <button type="button" onclick="recommend('viwanda')" class="focus-ring rounded-xl border border-slate-700 bg-slate-900/70 p-3 text-left text-xs font-semibold transition hover:border-gold">🏭<span class="mt-1 block">Viwanda / mizigo</span></button>
-          <button type="button" onclick="recommend('nyumbani')" class="focus-ring rounded-xl border border-slate-700 bg-slate-900/70 p-3 text-left text-xs font-semibold transition hover:border-gold">🏠<span class="mt-1 block">Nyumbani / afya</span></button>
-        </div>
-        <div id="recommendation" class="mt-4 hidden rounded-2xl border border-gold/30 bg-gold/10 p-4 text-sm leading-6 text-yellow-100" role="status" aria-live="polite"></div>
-      </div>
-    </section>
-
-    <section id="agiza" class="scroll-mt-24">
-      <div class="glass rounded-3xl border-emerald-500/25 p-5 sm:p-7">
-        <div class="grid gap-6 md:grid-cols-[1fr_.85fr] md:items-center">
-          <div><p class="text-xs font-bold uppercase tracking-[.18em] text-emerald-400">Rahisi na moja kwa moja</p><h2 class="mt-2 text-2xl font-black">Tuma oda WhatsApp</h2><p class="mt-2 text-sm leading-6 text-slate-400">Chagua bidhaa na idadi. WhatsApp itafunguka na ujumbe ulioandaliwa; bonyeza “Tuma” humo ili oda imfikie muuzaji.</p></div>
-          <div class="rounded-2xl border border-slate-700 bg-slate-950/50 p-4">
-            <label for="orderProduct" class="mb-2 block text-xs font-semibold text-slate-300">Bidhaa unayotaka</label>
-            <select id="orderProduct" class="focus-ring w-full rounded-xl border border-slate-700 bg-slate-900 px-3 py-3 text-sm text-white">
-              <option value="">-- Chagua bidhaa --</option>
-              <option>Digital Counter Scale (40kg)</option>
-              <option>Industrial Platform Scale (150kg)</option>
-              <option>Digital Bathroom Scale</option>
-            </select>
-            <div class="mt-3 grid grid-cols-2 gap-3">
-              <div><label for="customerName" class="mb-2 block text-xs font-semibold text-slate-300">Jina (hiari)</label><input id="customerName" type="text" autocomplete="name" placeholder="Jina lako" class="focus-ring w-full rounded-xl border border-slate-700 bg-slate-900 px-3 py-3 text-sm placeholder:text-slate-500"></div>
-              <div><label for="quantity" class="mb-2 block text-xs font-semibold text-slate-300">Idadi</label><input id="quantity" type="number" min="1" max="99" value="1" inputmode="numeric" class="focus-ring w-full rounded-xl border border-slate-700 bg-slate-900 px-3 py-3 text-sm"></div>
-            </div>
-            <label for="customerLocation" class="mb-2 mt-3 block text-xs font-semibold text-slate-300">Eneo la usafirishaji (hiari)</label>
-            <input id="customerLocation" type="text" autocomplete="address-level2" placeholder="Mfano: Dar es Salaam" class="focus-ring w-full rounded-xl border border-slate-700 bg-slate-900 px-3 py-3 text-sm placeholder:text-slate-500">
-            <button type="button" onclick="sendOrder()" class="focus-ring mt-4 flex w-full items-center justify-center gap-2 rounded-xl bg-emerald-600 px-4 py-3.5 text-sm font-black text-white transition hover:bg-emerald-500">Tengeneza oda WhatsApp <span aria-hidden="true">↗</span></button>
-            <p id="orderError" class="mt-2 hidden text-xs text-rose-300" role="alert"></p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="maswali" class="scroll-mt-24">
-      <p class="text-xs font-bold uppercase tracking-[.18em] text-gold">Kabla ya kuagiza</p><h2 class="mt-2 text-2xl font-black">Maswali ya kawaida</h2>
-      <div class="mt-4 grid gap-3 md:grid-cols-2">
-        <details class="glass rounded-2xl p-4"><summary class="cursor-pointer text-sm font-bold">Ninawezaje kujua mzani unaonifaa?</summary><p class="mt-3 text-xs leading-6 text-slate-400">Tumia mwongozo wa kuchagua hapo juu, au tuma WhatsApp ukieleza unachopima na uzito wa juu unaohitaji.</p></details>
-        <details class="glass rounded-2xl p-4"><summary class="cursor-pointer text-sm font-bold">Mnafanya usafirishaji?</summary><p class="mt-3 text-xs leading-6 text-slate-400">Wasiliana nasi WhatsApp kuthibitisha eneo, gharama na muda wa usafirishaji kabla ya kuweka oda.</p></details>
-        <details class="glass rounded-2xl p-4"><summary class="cursor-pointer text-sm font-bold">Nitalipaje?</summary><p class="mt-3 text-xs leading-6 text-slate-400">Tafadhali thibitisha bei na njia salama za malipo moja kwa moja na muuzaji kabla ya kutuma fedha.</p></details>
-        <details class="glass rounded-2xl p-4"><summary class="cursor-pointer text-sm font-bold">Picha za bidhaa ni za mzani halisi?</summary><p class="mt-3 text-xs leading-6 text-slate-400">Picha hizi zimetumika kama picha za kweli za bidhaa kwa ukubwa wa tovuti. Ukitachukua picha halisi ya mzani wako, tunaweza kuzibadilisha mara moja.</p></details>
-      </div>
-    </section>
+    <section id="maswali" class="scroll-mt-24"><p class="text-xs font-bold uppercase tracking-[.18em] text-gold">Kabla ya kuagiza</p><h2 class="mt-2 text-2xl font-black">Maswali ya kawaida</h2><div class="mt-4 grid gap-3 md:grid-cols-2"><details class="glass-soft rounded-2xl p-4"><summary class="cursor-pointer text-sm font-bold">Ninawezaje kujua mzani unaonifaa?</summary><p class="mt-3 text-xs leading-6 text-slate-400">Tumia mwongozo hapo juu au tuma WhatsApp ukieleza unachopima na uzito wa juu unaohitaji.</p></details><details class="glass-soft rounded-2xl p-4"><summary class="cursor-pointer text-sm font-bold">Mnafanya usafirishaji?</summary><p class="mt-3 text-xs leading-6 text-slate-400">Wasiliana nasi kuthibitisha eneo, gharama na muda wa usafirishaji kabla ya oda.</p></details><details class="glass-soft rounded-2xl p-4"><summary class="cursor-pointer text-sm font-bold">Nitalipaje?</summary><p class="mt-3 text-xs leading-6 text-slate-400">Thibitisha bei na njia za malipo moja kwa moja na muuzaji kabla ya kutuma fedha.</p></details><details class="glass-soft rounded-2xl p-4"><summary class="cursor-pointer text-sm font-bold">Picha ni za bidhaa zangu?</summary><p class="mt-3 text-xs leading-6 text-slate-400">Ndiyo, gallery inatumia picha zilizopakiwa kwenye repository yako; wasiliana nasi kuthibitisha modeli na sifa za kila mzani.</p></details></div></section>
   </main>
-
-  <footer class="border-t border-white/10 px-4 py-8 text-center text-xs text-slate-500">
-    <p class="font-bold text-slate-300">Mizani Tanzania · Kariakoo & Kisutu, Dar es Salaam</p>
-    <p class="mt-2">© <span id="year"></span> Mizani Tanzania. Bei, upatikanaji na usafirishaji vithibitishwe na muuzaji.</p>
-    <a class="mt-3 inline-block text-gold hover:underline" href="https://wa.me/255685048565" target="_blank" rel="noopener noreferrer">Wasiliana nasi WhatsApp</a>
-  </footer>
-
+  <footer class="relative z-10 border-t border-white/10 bg-black/20 px-4 py-8 text-center text-xs text-slate-400 backdrop-blur-xl"><div class="mx-auto max-w-6xl"><div class="brand-gold text-sm font-black tracking-[.2em]">MIZANI TANZANIA</div><p class="mt-2">Kariakoo & Kisutu · Dar es Salaam</p><p class="mt-2 text-[10px] text-slate-500">© <span id="year"></span> Mizani Tanzania. Bei, upatikanaji na usafirishaji vithibitishwe na muuzaji.</p><a class="mt-3 inline-block text-gold hover:underline" href="https://wa.me/255685048565" target="_blank" rel="noopener noreferrer">Wasiliana nasi WhatsApp</a></div></footer>
   <script>
-    const whatsappNumber = '255685048565';
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    const galleryItems = [
-      {
-        image: 'https://images.unsplash.com/photo-1584438784894-089d6a62b8fa?auto=format&fit=crop&w=1200&q=80',
-        title: 'Display ya mzani',
-        description: 'Inatoa usomaji wa uzito kwa haraka, yenye skrini ya LED inayofanya kazi vizuri kwenye mwanga wa jua na usiku.'
-      },
-      {
-        image: 'https://images.unsplash.com/photo-1578916171728-46686eac8d58?auto=format&fit=crop&w=1200&q=80',
-        title: 'Platform / body',
-        description: 'Mwili wa chuma unaotumika kwa matumizi ya biashara na viwanda. Imara, inastahimili uzito mkubwa bila kupinda.'
-      },
-      {
-        image: 'https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1200&q=80',
-        title: 'Load cell / sensor',
-        description: 'Kitu cha msingi cha mzani kinachotambua mzigo na kupunguza makosa ya usomaji kwa usahihi wa hali ya juu.'
-      }
+    const whatsappNumber='255685048565';document.getElementById('year').textContent=new Date().getFullYear();
+    const galleryItems=[
+      {image:'snaptik_7505337985043270967_0.jpg',title:'Mzani wa bakuli',description:'Picha ya mzani wa bakuli kutoka kwenye mkusanyiko wako. Wasiliana nasi kuthibitisha uwezo na bei.'},
+      {image:'snaptik_7505353894176754949_0.jpg',title:'Mizani za kaunta',description:'Picha ya mizani ya biashara na display. Uliza kuhusu modeli na sifa zinazopatikana.'},
+      {image:'snaptik_7520695538178624824_0.jpg',title:'Mzani wa jukwaa',description:'Picha ya mzani wa jukwaa kwa mizigo. Thibitisha uwezo na vipimo vya modeli husika.'}
     ];
-
-    const mainImage = document.getElementById('galleryMainImage');
-    const galleryTitle = document.getElementById('galleryTitle');
-    const galleryDescription = document.getElementById('galleryDescription');
-    const galleryButtons = document.querySelectorAll('.gallery-card');
-
-    galleryButtons.forEach((button) => {
-      button.addEventListener('click', () => {
-        const index = Number(button.dataset.index);
-        const item = galleryItems[index];
-        mainImage.src = item.image;
-        mainImage.alt = item.title;
-        galleryTitle.textContent = item.title;
-        galleryDescription.textContent = item.description;
-
-        galleryButtons.forEach((btn) => btn.classList.remove('active'));
-        button.classList.add('active');
-      });
-    });
-
-    function selectProduct(product) {
-      const selector = document.getElementById('orderProduct');
-      selector.value = product;
-      document.getElementById('agiza').scrollIntoView({ behavior: 'smooth', block: 'center' });
-      selector.focus({ preventScroll: true });
-    }
-
-    function recommend(type) {
-      const suggestions = {
-        duka: 'Kwa duka au reja reja, anza kwa kuangalia Digital Counter Scale (40kg). Thibitisha uwezo unaohitajika na muuzaji kabla ya kuagiza.',
-        viwanda: 'Kwa magunia na mizigo, Industrial Platform Scale (150kg) inaweza kuwa chaguo la kuanzia. Hakikisha uzito wa juu wa bidhaa zako hauzidi uwezo wa mzani.',
-        nyumbani: 'Kwa matumizi ya nyumbani, uliza kuhusu Digital Bathroom Scale na uwezo wake wa kupima. Tuma ujumbe WhatsApp ili kuthibitisha bei na upatikanaji.'
-      };
-      const box = document.getElementById('recommendation');
-      box.textContent = 'Pendekezo: ' + suggestions[type];
-      box.classList.remove('hidden');
-    }
-
-    function sendOrder() {
-      const product = document.getElementById('orderProduct').value;
-      const quantityInput = document.getElementById('quantity');
-      const quantity = Math.min(99, Math.max(1, Number.parseInt(quantityInput.value, 10) || 1));
-      const name = document.getElementById('customerName').value.trim();
-      const location = document.getElementById('customerLocation').value.trim();
-      const error = document.getElementById('orderError');
-      if (!product) {
-        error.textContent = 'Tafadhali chagua bidhaa unayotaka kwanza.';
-        error.classList.remove('hidden');
-        document.getElementById('orderProduct').focus();
-        return;
-      }
-      error.classList.add('hidden');
-      quantityInput.value = String(quantity);
-      const lines = [
-        'Habari Mizani Tanzania, naomba kuweka oda:',
-        `Bidhaa: ${product}`,
-        `Idadi: ${quantity}`,
-        name ? `Jina: ${name}` : '',
-        location ? `Eneo la usafirishaji: ${location}` : '',
-        'Tafadhali thibitisha bei, upatikanaji na maelezo ya malipo/usafirishaji.'
-      ].filter(Boolean);
-      const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(lines.join('\n'))}`;
-      window.open(url, '_blank', 'noopener,noreferrer');
-    }
+    document.querySelectorAll('.gallery-thumb').forEach(button=>button.addEventListener('click',()=>setGallery(Number(button.dataset.index))));
+    function setGallery(index){const item=galleryItems[index];document.getElementById('galleryMainImage').src=item.image;document.getElementById('galleryMainImage').alt=item.title+' - picha halisi';document.getElementById('galleryTitle').textContent=item.title;document.getElementById('galleryDescription').textContent=item.description;document.querySelectorAll('.gallery-thumb').forEach((el,i)=>el.classList.toggle('active',i===index));}
+    function openGallery(index){setGallery(index);document.getElementById('gallery').scrollIntoView({behavior:'smooth'});}
+    function selectProduct(product){document.getElementById('orderProduct').value=product;document.getElementById('agiza').scrollIntoView({behavior:'smooth',block:'center'});document.getElementById('orderProduct').focus({preventScroll:true});}
+    function recommend(type){const text={duka:'Kwa duka au reja reja, angalia mizani ya kaunta au bakuli. Thibitisha uwezo wa kilo na bei na muuzaji.',viwanda:'Kwa magunia na mizigo, uliza kuhusu mizani ya jukwaa na uwezo wake wa kilo kabla ya kuagiza.',nyumbani:'Kwa matumizi ya nyumbani, tuma WhatsApp kueleza unachotaka kupima ili upate pendekezo linalofaa.'};const box=document.getElementById('recommendation');box.textContent='Pendekezo: '+text[type];box.classList.remove('hidden');}
+    function sendOrder(){const product=document.getElementById('orderProduct').value;const quantity=Math.min(99,Math.max(1,parseInt(document.getElementById('quantity').value,10)||1));const name=document.getElementById('customerName').value.trim();const location=document.getElementById('customerLocation').value.trim();const error=document.getElementById('orderError');if(!product){error.textContent='Tafadhali chagua bidhaa unayotaka kwanza.';error.classList.remove('hidden');document.getElementById('orderProduct').focus();return;}error.classList.add('hidden');const lines=['Habari Mizani Tanzania, naomba kuweka oda:',`Bidhaa: ${product}`,`Idadi: ${quantity}`,name?`Jina: ${name}`:'',location?`Eneo la usafirishaji: ${location}`:'','Tafadhali thibitisha bei, upatikanaji na maelekezo ya malipo/usafirishaji.'].filter(Boolean);window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(lines.join('\n'))}`,'_blank','noopener,noreferrer');}
   </script>
 </body>
 </html>
